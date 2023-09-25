@@ -20,7 +20,7 @@
 - CSS
 - JavaScript
 
-## [Опробовать генератор](https://canvas-meme-generator.netlify.app/)
+## [Опробовать калькулятор](https://blue-calorie-calculator.netlify.app/)
 
 
 ## Автор
