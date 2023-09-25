@@ -1,0 +1,8 @@
+.header {
+    width: 100%;
+}
+.header__title {
+    color: #fff;
+    margin: 10px 0;
+    text-align: center;
+}

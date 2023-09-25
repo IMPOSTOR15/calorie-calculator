@@ -1,0 +1,134 @@
+.product {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgb(53, 67, 85);
+    color: #fff;
+}
+
+.product__icon {
+    width: 50px;
+    height: 50px;
+}
+
+.product__info {
+    display: flex;
+    flex-direction: column;
+}
+
+.product__title {
+    margin: 5px 0;
+}
+
+.product__characteristics {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.product__characteristic {
+    margin: 5px 0;
+}
+
+.product__add-btn {
+    width: 50px;
+    height: 50px;
+    background-image: url(../../icons/add.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer; 
+}
+.product__delete-btn {
+    width: 30px;
+    height: 30px;
+    background-image: url(../../icons/delete.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.product__delete-btn-all {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-image: url(../../icons/delete.svg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.product__weight-label {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: 20px;
+    gap: 10px;
+}
+
+.product__weight-input {
+    background-color: transparent;
+    border: 2px solid  rgb(74, 93, 117);
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    color: #fff;
+}
+.products__search-input {
+    flex: 1;
+    background-color: transparent;
+    border: 2px solid  rgb(74, 93, 117);
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    color: #fff;
+}
+
+
+@media (max-width: 1200px) {
+    .product {
+        font-size: 1.5vw;
+    }
+    .product__icon {
+        width: 5vw;
+        height: 5vw;
+    }
+    .product__add-btn {
+        width: 5vw;
+        height: 5vw;
+    }
+    .product__delete-btn {
+        width: 5vw;
+        height: 5vw;
+    }
+    .product__delete-btn-all {
+        width: 5vw;
+        height: 5vw;
+    }
+    .product__weight-input {
+        max-width: 10vw;
+        padding: 1vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .product {
+        font-size: 2vw;
+    }
+    .product__weight-label {
+        margin-right: 2vw;
+        gap: 1vw;
+    }
+    .product__characteristics {
+        gap: 1vw;
+    }
+    
+}

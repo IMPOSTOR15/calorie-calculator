@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Калькулятор калорий</title>
+
+    </head>
+    <body>
+        <main class="root">
+            <header class="header">
+                <h1 class="header__title">Калькулятор калорий</h1>
+            </header>
+            <section class="calculator">
+                <div class="calculator__day-products">
+                    <h3 class="calculator__title">Съедено за день</h3>
+                    <div class="calculator__products" id="eaten-products">
+                        
+                    </div>
+                </div>
+                <div class="calculator__day-stats">
+                    <h3 class="calculator__title">Статистика</h3>
+                    <div class="calculator__stats-parametrs">
+                        <span class="calculator__stat-text" >Каллорий: <span id="all-calories">0</span></span>
+                        <span class="calculator__stat-text" >Белков: <span id="all-proteins">0</span></span>
+                        <span class="calculator__stat-text" >Жиров: <span id="all-fats">0</span></span>
+                        <span class="calculator__stat-text" >Углеводов: <span id="all-carbohydrates">0</span></span>
+                    </div>
+                    <button id="open-settings-modal-btn" class="calculator__settings-btn"></button>
+                </div>
+                <div class="calculator__chart">
+                    <div class="circle__wrapper">
+                        <div class="circle__rand-circle">
+                            <div class="circle__rand-circle-inset"></div>
+                        </div>
+                        <p id="calory-percent" class="calory-text"></p>
+                    </div>
+                    <p class="calculator__chart-description-text">Употрблено калорий: <span id="consumed-calories"></span>/<span id="limit-calories"></span></p>
+                    <p id="warning-text" class="calculator__warning-text">Вы привысили дневную цель калорий!</p>
+                </div>
+            </section>
+            <section class="products">
+                <div class="products__sort-row">
+                    <button class="products__sort-btn" id="sort-by-name-btn">По названию</button>
+                    <button class="products__sort-btn" id="sort-by-calory-btn">По калорийности</button>
+                    <input class="products__search-input" id="search-input" type="search" placeholder="найди продукт">
+                    <button class="products__add-btn" id="open-add-product-modal">Добавить</button>
+                </div>
+                <div class="products__column" id="products-column">
+
+                </div>
+            </section>
+        </main>
+        <div id="modal" class="modal">
+            <div id="add-product-modal" class="modal__content">
+                <div class="modal__header">
+                    <h2 class="modal__title">Добавить продукт</h2>
+                    <button class="modal__close-btn" id="close-modal-btn"></button>
+                </div>
+                <div class="modal__body">
+                    <form class="add-product">
+                        <label class="add-product__label" for="add-product-name">
+                            <span>Название</span>
+                            <input id="add-product-name" class="add-product__input" name="add-product-name" type="text">
+                        </label>
+                        <label class="add-product__label" for="add-product-calories">
+                            <span>Калорийность на 100 грамм</span>
+                            <input id="add-product-calories" class="add-product__input" name="add-product-calories" type="number">
+                        </label>
+                        <label class="add-product__label" for="add-product-proteins">
+                            <span>Белки</span>
+                            <input id="add-product-proteins" class="add-product__input" name="add-product-proteins" type="number">
+                        </label>
+                        <label class="add-product__label" for="add-product-fats">
+                            <span>Жиры</span>
+                            <input id="add-product-fats" class="add-product__input" name="add-product-fats" type="number">
+                        </label>
+                        <label class="add-product__label" for="add-product-carbohydrates">
+                            <span>Углеводы</span>
+                            <input id="add-product-carbohydrates" class="add-product__input" name="add-product-carbohydrates" type="number">
+                        </label>
+                        <span class="add-product__error-text" id="add-product-error-text">Проверьте заполнение</span>
+                    </form>
+                </div>
+                <div class="modal__footer">
+                    <button class="add-product__btn"  id="add-ropduct-btn">Добавить</button>
+                </div>
+            </div>
+            <div id="settings-modal" class="modal__content">
+                <div class="modal__header">
+                    <h2 class="modal__title">Настройки</h2>
+                    <button class="modal__close-btn" id="close-settings-modal-btn"></button>
+                </div>
+                <div class="modal__body">
+                    <label class="add-product__label" for="day-goal-input">
+                        <span>Дневная цель калорий</span>
+                        <input id="day-goal-input" class="add-product__input" name="day-goal-input" type="number" placeholder="Цель калорий">
+                    </label>
+                    <span class="settings__error-text" id="settings-error">Не установлено значение калорий</span>
+                    <button class="settings__btn" id="delete-all-btn">Очистить все данные</button>
+                </div>
+                <div class="modal__footer">
+                    <button class="add-product__btn"  id="confirm-settings-btn">Применить</button>
+                </div>
+            </div>
+        </div>
+        <template id="product-template">
+            <div class="product">
+                <img class="product__icon" src="" alt="">
+                <div class="product__info">
+                    <p class="product__title"></p>
+                    <div class="product__characteristics">
+                        <p class="product__characteristic">калорий: <span id="product-calories"></span></p>
+                        <p class="product__characteristic">белки: <span id="product-proteins"></span></p>
+                        <p class="product__characteristic">жиры: <span id="product-fatss"></span></p>
+                        <p class="product__characteristic">углеводы: <span id="product-carbohydrates"></span></p>
+                    </div>
+                </div>
+                <label class="product__weight-label" for="weight">
+                    <span class="product__weight-label-text">Вес (г.)</span>
+                    <input class="product__weight-input" type="number" name="weight" id="weight-input" value="100">
+                </label>
+                <button class="product__delete-btn-all"></button>
+                <button class="product__add-btn"></button>
+            </div>
+        </template>
+        <template id="added-product-template">
+            <div class="product">
+                <img class="product__icon" src="" alt="">
+                <div class="product__info">
+                    <p class="product__title"></p>
+                    <div class="product__characteristics">
+                        <p class="product__characteristic">калорий: <span id="product-calories"></span></p>
+                        <p class="product__characteristic">белки: <span id="product-proteins"></span></p>
+                        <p class="product__characteristic">жиры: <span id="product-fatss"></span></p>
+                        <p class="product__characteristic">углеводы: <span id="product-carbohydrates"></span></p>
+                        <p class="product__characteristic">Вес: <span id="product-weight"></span></p>
+                    </div>
+                </div>
+                <button class="product__delete-btn"></button>
+            </div>
+        </template>
+
+    </body>
+</html>

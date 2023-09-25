@@ -1,0 +1,15 @@
+.settings__btn {
+    background-color: transparent;
+    border: 2px solid  rgb(74, 93, 117);
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.settings__error-text {
+    text-align: center;
+    color: red;
+    display: none;
+}

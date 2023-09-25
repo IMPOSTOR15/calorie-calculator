@@ -1,0 +1,47 @@
+.circle__wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 500px;
+}
+
+.circle__rand-circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background: conic-gradient(rgb(35, 68, 255) 0%, rgb(0, 225, 255) var(--pie-p, 0%), transparent 0);
+    --pie-b: 100px;
+    mask: radial-gradient(farthest-side,#0000 calc(99% - var(--pie-b)),#000 calc(100% - var(--pie-b)));
+}
+
+.circle__rand-circle-inset {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(80% - 48px);
+    margin: 0 auto;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    background: #4b5f79;
+    z-index: 5;
+}
+
+.calory-text {
+    z-index: 10;
+    margin: 0;
+    position: absolute;   
+    top: 50%;                    
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 100%;
+    font-size: 2rem;
+    color: #fff;
+}

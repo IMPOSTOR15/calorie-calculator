@@ -1,0 +1,38 @@
+.add-product {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.add-product__label {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+}
+
+.add-product__input {
+    background-color: transparent;
+    border: 2px solid  rgb(74, 93, 117);
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    color: #fff;
+}
+
+.add-product__btn {
+    background-color: transparent;
+    border: 2px solid  rgb(74, 93, 117);
+    border-radius: 10px;
+    padding: 10px 20px;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.add-product__error-text {
+    text-align: center;
+    color: red;
+    display: none;
+}
